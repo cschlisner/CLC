@@ -5,6 +5,7 @@ This is a Windows application that communicates with the included Arduino code t
 
 
 ##Installation
+1. Load the Arduino/CLC.ino onto your Arduino and make sure it's on COM3
 
-Simply put the CLC-master/CLC directory wherever you want and run CLC.exe
+2. Simply put the "CLC app" directory wherever you want and run CLC.exe
 
