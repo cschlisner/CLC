@@ -1,0 +1,16 @@
+d:\documents\visual studio 2013\Projects\CLC\CLC\bin\Debug\CLC.exe.config
+d:\documents\visual studio 2013\Projects\CLC\CLC\bin\Debug\CLC.exe
+d:\documents\visual studio 2013\Projects\CLC\CLC\bin\Debug\CLC.pdb
+d:\documents\visual studio 2013\Projects\CLC\CLC\obj\Debug\CLC.Form1.resources
+d:\documents\visual studio 2013\Projects\CLC\CLC\obj\Debug\CLC.Properties.Resources.resources
+d:\documents\visual studio 2013\Projects\CLC\CLC\obj\Debug\CLC.UserControl1.resources
+d:\documents\visual studio 2013\Projects\CLC\CLC\obj\Debug\CLC.csproj.GenerateResource.Cache
+d:\documents\visual studio 2013\Projects\CLC\CLC\obj\Debug\CLC.exe
+d:\documents\visual studio 2013\Projects\CLC\CLC\obj\Debug\CLC.pdb
+d:\documents\visual studio 2013\Projects\CLC\CLC\bin\Debug\Bass.Net.dll
+d:\documents\visual studio 2013\Projects\CLC\CLC\bin\Debug\Bass.Net.xml
+d:\documents\visual studio 2013\Projects\CLC\CLC\bin\Debug\CLC.exe.manifest
+d:\documents\visual studio 2013\Projects\CLC\CLC\bin\Debug\CLC.application
+d:\documents\visual studio 2013\Projects\CLC\CLC\obj\Debug\CLC.exe.manifest
+d:\documents\visual studio 2013\Projects\CLC\CLC\obj\Debug\CLC.application
+d:\documents\visual studio 2013\Projects\CLC\CLC\obj\Debug\CLC.csprojResolveAssemblyReference.cache
