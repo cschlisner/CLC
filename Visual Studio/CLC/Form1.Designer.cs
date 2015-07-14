@@ -207,15 +207,14 @@
             this.toolStripExit});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.ShowImageMargin = false;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(92, 164);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(128, 186);
             // 
             // toolStripOn
             // 
             this.toolStripOn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripOn.Name = "toolStripOn";
-            this.toolStripOn.Size = new System.Drawing.Size(91, 22);
+            this.toolStripOn.Size = new System.Drawing.Size(127, 22);
             this.toolStripOn.Text = "On";
-            this.toolStripOn.ToolTipText = "On";
             this.toolStripOn.Visible = false;
             this.toolStripOn.Click += new System.EventHandler(this.toolStripOn_Click);
             // 
@@ -223,16 +222,15 @@
             // 
             this.toolStripOff.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripOff.Name = "toolStripOff";
-            this.toolStripOff.Size = new System.Drawing.Size(91, 22);
+            this.toolStripOff.Size = new System.Drawing.Size(127, 22);
             this.toolStripOff.Text = "Off";
-            this.toolStripOff.ToolTipText = "Off";
             this.toolStripOff.Click += new System.EventHandler(this.toolStripOff_Click);
             // 
             // toolStripBass
             // 
             this.toolStripBass.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripBass.Name = "toolStripBass";
-            this.toolStripBass.Size = new System.Drawing.Size(91, 22);
+            this.toolStripBass.Size = new System.Drawing.Size(127, 22);
             this.toolStripBass.Text = "Bass";
             this.toolStripBass.Click += new System.EventHandler(this.toolStripBass_Click);
             // 
@@ -240,7 +238,7 @@
             // 
             this.toolStripBeat.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripBeat.Name = "toolStripBeat";
-            this.toolStripBeat.Size = new System.Drawing.Size(91, 22);
+            this.toolStripBeat.Size = new System.Drawing.Size(127, 22);
             this.toolStripBeat.Text = "Beat";
             this.toolStripBeat.Click += new System.EventHandler(this.toolStripBeat_Click);
             // 
@@ -248,7 +246,7 @@
             // 
             this.toolStripFade.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripFade.Name = "toolStripFade";
-            this.toolStripFade.Size = new System.Drawing.Size(91, 22);
+            this.toolStripFade.Size = new System.Drawing.Size(127, 22);
             this.toolStripFade.Text = "Fade";
             this.toolStripFade.Click += new System.EventHandler(this.toolStripFade_Click);
             // 
@@ -256,20 +254,20 @@
             // 
             this.toolStripSeparator2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(88, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(124, 6);
             // 
             // toolStripSettings
             // 
             this.toolStripSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripSettings.Name = "toolStripSettings";
-            this.toolStripSettings.Size = new System.Drawing.Size(91, 22);
+            this.toolStripSettings.Size = new System.Drawing.Size(127, 22);
             this.toolStripSettings.Text = "Settings";
             this.toolStripSettings.Click += new System.EventHandler(this.toolStripSettings_Click);
             // 
             // toolStripExit
             // 
             this.toolStripExit.Name = "toolStripExit";
-            this.toolStripExit.Size = new System.Drawing.Size(91, 22);
+            this.toolStripExit.Size = new System.Drawing.Size(127, 22);
             this.toolStripExit.Text = "Exit";
             this.toolStripExit.Click += new System.EventHandler(this.toolStripExit_Click);
             // 
