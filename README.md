@@ -20,5 +20,5 @@ This is a Windows application that communicates with the included Arduino code t
 
 ![screen2](http://i.imgur.com/yKNVAOM.gif)
 
-
+Demo:
 [![Demo](http://img.youtube.com/vi/pMWPy95PAZQ/0.jpg)](https://www.youtube.com/watch?v=pMWPy95PAZQ)
