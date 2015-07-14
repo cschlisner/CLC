@@ -51,6 +51,8 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.COMPortCB = new System.Windows.Forms.ComboBox();
+            this.deviceCB = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.sensitivityTB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IntensityTB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.speedTB)).BeginInit();
@@ -59,7 +61,7 @@
             // 
             // sensitivityTB
             // 
-            this.sensitivityTB.Location = new System.Drawing.Point(108, 91);
+            this.sensitivityTB.Location = new System.Drawing.Point(166, 88);
             this.sensitivityTB.Maximum = 900;
             this.sensitivityTB.Minimum = 300;
             this.sensitivityTB.Name = "sensitivityTB";
@@ -72,7 +74,7 @@
             // IntensityTB
             // 
             this.IntensityTB.LargeChange = 50;
-            this.IntensityTB.Location = new System.Drawing.Point(108, 25);
+            this.IntensityTB.Location = new System.Drawing.Point(166, 22);
             this.IntensityTB.Maximum = 255;
             this.IntensityTB.Name = "IntensityTB";
             this.IntensityTB.Size = new System.Drawing.Size(224, 45);
@@ -84,7 +86,7 @@
             // 
             // speedTB
             // 
-            this.speedTB.Location = new System.Drawing.Point(108, 161);
+            this.speedTB.Location = new System.Drawing.Point(166, 158);
             this.speedTB.Maximum = 50;
             this.speedTB.Minimum = 1;
             this.speedTB.Name = "speedTB";
@@ -158,7 +160,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(201, 7);
+            this.label1.Location = new System.Drawing.Point(259, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 14;
@@ -167,7 +169,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(201, 73);
+            this.label2.Location = new System.Drawing.Point(259, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 15;
@@ -176,7 +178,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(201, 139);
+            this.label3.Location = new System.Drawing.Point(259, 136);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 16;
@@ -211,7 +213,7 @@
             // 
             this.toolStripOn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripOn.Name = "toolStripOn";
-            this.toolStripOn.Size = new System.Drawing.Size(127, 22);
+            this.toolStripOn.Size = new System.Drawing.Size(91, 22);
             this.toolStripOn.Text = "On";
             this.toolStripOn.ToolTipText = "On";
             this.toolStripOn.Visible = false;
@@ -221,7 +223,7 @@
             // 
             this.toolStripOff.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripOff.Name = "toolStripOff";
-            this.toolStripOff.Size = new System.Drawing.Size(127, 22);
+            this.toolStripOff.Size = new System.Drawing.Size(91, 22);
             this.toolStripOff.Text = "Off";
             this.toolStripOff.ToolTipText = "Off";
             this.toolStripOff.Click += new System.EventHandler(this.toolStripOff_Click);
@@ -230,7 +232,7 @@
             // 
             this.toolStripBass.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripBass.Name = "toolStripBass";
-            this.toolStripBass.Size = new System.Drawing.Size(127, 22);
+            this.toolStripBass.Size = new System.Drawing.Size(91, 22);
             this.toolStripBass.Text = "Bass";
             this.toolStripBass.Click += new System.EventHandler(this.toolStripBass_Click);
             // 
@@ -238,7 +240,7 @@
             // 
             this.toolStripBeat.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripBeat.Name = "toolStripBeat";
-            this.toolStripBeat.Size = new System.Drawing.Size(127, 22);
+            this.toolStripBeat.Size = new System.Drawing.Size(91, 22);
             this.toolStripBeat.Text = "Beat";
             this.toolStripBeat.Click += new System.EventHandler(this.toolStripBeat_Click);
             // 
@@ -246,7 +248,7 @@
             // 
             this.toolStripFade.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripFade.Name = "toolStripFade";
-            this.toolStripFade.Size = new System.Drawing.Size(127, 22);
+            this.toolStripFade.Size = new System.Drawing.Size(91, 22);
             this.toolStripFade.Text = "Fade";
             this.toolStripFade.Click += new System.EventHandler(this.toolStripFade_Click);
             // 
@@ -254,28 +256,50 @@
             // 
             this.toolStripSeparator2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(124, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(88, 6);
             // 
             // toolStripSettings
             // 
             this.toolStripSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripSettings.Name = "toolStripSettings";
-            this.toolStripSettings.Size = new System.Drawing.Size(127, 22);
+            this.toolStripSettings.Size = new System.Drawing.Size(91, 22);
             this.toolStripSettings.Text = "Settings";
             this.toolStripSettings.Click += new System.EventHandler(this.toolStripSettings_Click);
             // 
             // toolStripExit
             // 
             this.toolStripExit.Name = "toolStripExit";
-            this.toolStripExit.Size = new System.Drawing.Size(127, 22);
+            this.toolStripExit.Size = new System.Drawing.Size(91, 22);
             this.toolStripExit.Text = "Exit";
             this.toolStripExit.Click += new System.EventHandler(this.toolStripExit_Click);
+            // 
+            // COMPortCB
+            // 
+            this.COMPortCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.COMPortCB.FormattingEnabled = true;
+            this.COMPortCB.Location = new System.Drawing.Point(12, 170);
+            this.COMPortCB.Name = "COMPortCB";
+            this.COMPortCB.Size = new System.Drawing.Size(121, 21);
+            this.COMPortCB.TabIndex = 17;
+            this.COMPortCB.SelectedIndexChanged += new System.EventHandler(this.COMPortCB_SelectedIndexChanged);
+            // 
+            // deviceCB
+            // 
+            this.deviceCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.deviceCB.FormattingEnabled = true;
+            this.deviceCB.Location = new System.Drawing.Point(12, 143);
+            this.deviceCB.Name = "deviceCB";
+            this.deviceCB.Size = new System.Drawing.Size(121, 21);
+            this.deviceCB.TabIndex = 18;
+            this.deviceCB.SelectedIndexChanged += new System.EventHandler(this.deviceCB_SelectedIndexChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 198);
+            this.ClientSize = new System.Drawing.Size(402, 198);
+            this.Controls.Add(this.deviceCB);
+            this.Controls.Add(this.COMPortCB);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -330,6 +354,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem toolStripSettings;
         private System.Windows.Forms.ToolStripMenuItem toolStripExit;
+        private System.Windows.Forms.ComboBox COMPortCB;
+        private System.Windows.Forms.ComboBox deviceCB;
     }
 }
 

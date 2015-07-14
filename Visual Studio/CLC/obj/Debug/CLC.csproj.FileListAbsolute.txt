@@ -14,3 +14,15 @@ d:\documents\visual studio 2013\Projects\CLC\CLC\bin\Debug\CLC.application
 d:\documents\visual studio 2013\Projects\CLC\CLC\obj\Debug\CLC.exe.manifest
 d:\documents\visual studio 2013\Projects\CLC\CLC\obj\Debug\CLC.application
 d:\documents\visual studio 2013\Projects\CLC\CLC\obj\Debug\CLC.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\CLC\Visual Studio\CLC\bin\Debug\CLC.exe.config
+D:\Documents\GitHub\CLC\Visual Studio\CLC\obj\Debug\CLC.exe
+D:\Documents\GitHub\CLC\Visual Studio\CLC\obj\Debug\CLC.pdb
+D:\Documents\GitHub\CLC\Visual Studio\CLC\bin\Debug\CLC.exe
+D:\Documents\GitHub\CLC\Visual Studio\CLC\bin\Debug\CLC.pdb
+D:\Documents\GitHub\CLC\Visual Studio\CLC\bin\Debug\Bass.Net.dll
+D:\Documents\GitHub\CLC\Visual Studio\CLC\bin\Debug\Bass.Net.xml
+D:\Documents\GitHub\CLC\Visual Studio\CLC\obj\Debug\CLC.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\CLC\Visual Studio\CLC\obj\Debug\CLC.Form1.resources
+D:\Documents\GitHub\CLC\Visual Studio\CLC\obj\Debug\CLC.Properties.Resources.resources
+D:\Documents\GitHub\CLC\Visual Studio\CLC\obj\Debug\CLC.UserControl1.resources
+D:\Documents\GitHub\CLC\Visual Studio\CLC\obj\Debug\CLC.csproj.GenerateResource.Cache

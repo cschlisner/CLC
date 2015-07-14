@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using System.IO.Ports;
 
 namespace CLC
 {
@@ -14,19 +15,32 @@ namespace CLC
     {
         Controller controller = new Controller();
         Thread workerThread;
+        bool exitButton = false;
         public Form1()
         {
             InitializeComponent();
             sensitivityTB.Enabled = false;
             speedTB.Enabled = false;
+
+            // Initialize COM Port dropdown
+            string[] ports = SerialPort.GetPortNames();
+            COMPortCB.Items.AddRange(ports);
+            Controller.port = new SerialPort((string)Properties.Settings.Default["COMPortDefault"], 9600);
+            COMPortCB.SelectedItem = COMPortCB.Items[COMPortCB.Items.IndexOf(Controller.port.PortName)];
+
+            //Initialize Device List dropdown
+            deviceCB.Items.AddRange(controller.getDeviceList());
+            deviceCB.SelectedIndex = (int)Properties.Settings.Default["DeviceDefault"];
+
+
             workerThread = new Thread(controller.Start);
             workerThread.Start();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.SetDesktopLocation(Screen.FromControl(this).Bounds.Width - 355, Screen.FromControl(this).Bounds.Height - 279);
-
+            this.SetDesktopLocation(Screen.FromControl(this).Bounds.Width - this.Bounds.Width, Screen.PrimaryScreen.WorkingArea.Height - this.Bounds.Height);
+            
         }
         private void Form1_Shown(object sender, EventArgs e)
         {
@@ -35,6 +49,9 @@ namespace CLC
         }
         private void DisableTrackbars()
         {
+            label1.Enabled = false;
+            label2.Enabled = false;
+            label3.Enabled = false;
             IntensityTB.Enabled = false;
             sensitivityTB.Enabled = false;
             speedTB.Enabled = false;
@@ -45,6 +62,7 @@ namespace CLC
         {
             controller.currentMode = Controller.Mode.ON;
             DisableTrackbars();
+            label1.Enabled = true;
             IntensityTB.Enabled = true;
         }
         //OFF
@@ -64,7 +82,9 @@ namespace CLC
         {
             controller.currentMode = Controller.Mode.BEAT;
             DisableTrackbars();
+            label1.Enabled = true;
             IntensityTB.Enabled = true;
+            label2.Enabled = true;
             sensitivityTB.Enabled = true;
         }
         //FADE
@@ -72,6 +92,7 @@ namespace CLC
         {
             controller.currentMode = Controller.Mode.FADE;
             DisableTrackbars();
+            label3.Enabled = true;
             speedTB.Enabled = true;
         }
 
@@ -92,11 +113,13 @@ namespace CLC
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("This will close down the whole application. Confirm?", "Close Application", MessageBoxButtons.YesNo) != DialogResult.Yes)
+
+            if (!exitButton && MessageBox.Show("Exit app? \n(To hide the settings dialogue, press minimize)", "Close Application", MessageBoxButtons.YesNo) != DialogResult.Yes)
             {
                 e.Cancel = true;
             } 
             else workerThread.Abort();
+            
         }
 
         private void notifyIcon1_Click(object sender, EventArgs e)
@@ -166,11 +189,41 @@ namespace CLC
 
         private void toolStripExit_Click(object sender, EventArgs e)
         {
+            exitButton = true;
             this.Close();
         }
 
         private void Form1_Move(object sender, EventArgs e)
         {
+        }
+
+        private void COMPortCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (workerThread!=null) workerThread.Suspend();
+            if (Controller.port.IsOpen) Controller.port.Close();
+            Controller.port = new SerialPort(COMPortCB.SelectedItem.ToString(), 9600);
+            Controller.port.Open();
+            if (workerThread != null) workerThread.Resume();
+            Properties.Settings.Default["COMPortDefault"] = COMPortCB.SelectedItem.ToString();
+            Properties.Settings.Default.Save();
+        }
+
+        private void deviceCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            controller.deviceFree();
+            controller.deviceInit(Convert.ToInt32(deviceCB.SelectedItem.ToString().Remove(2)));
+            if (controller.currentMode == Controller.Mode.BEAT)
+            {
+                OFF.Checked = true;
+                BEAT.Checked = true;
+            }
+            else if (controller.currentMode == Controller.Mode.LEVELS)
+            {
+                OFF.Checked = true;
+                LEVELS.Checked = true;
+            }
+            Properties.Settings.Default["DeviceDefault"] = deviceCB.SelectedIndex;
+            Properties.Settings.Default.Save();
         }
     }
 }

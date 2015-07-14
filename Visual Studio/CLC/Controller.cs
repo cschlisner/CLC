@@ -17,8 +17,8 @@ namespace CLC
         public int intensity=255, sensitivity=450, speed=3;
         private static byte[] sendData = new byte[1024];
 
-
-        private static SerialPort port = new SerialPort("COM3", 9600);
+        private bool init = false;
+        public static SerialPort port = new SerialPort("COM1", 9600);
         private static WASAPIPROC _process;
         private static Visuals v = new Visuals();
         public Controller()
@@ -26,27 +26,11 @@ namespace CLC
 
             Un4seen.Bass.BassNet.Registration("cschlisner@gmail.com", "2X2283720152222");
             AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnProcessExit);
-            // Init
-            int devindex = 0;
-            bool result = false;
-            for (int i = 0; i < BassWasapi.BASS_WASAPI_GetDeviceCount(); i++)
-            {
-                var device = BassWasapi.BASS_WASAPI_GetDeviceInfo(i);
-                if (device.IsEnabled && device.IsLoopback)
-                {
-                    if (device.name.Contains("Speakers"))
-                        devindex = i;
-                }
-            }
             Bass.BASS_SetConfig(BASSConfig.BASS_CONFIG_UPDATETHREADS, false);
-            result = Bass.BASS_Init(0, 44100, BASSInit.BASS_DEVICE_DEFAULT, IntPtr.Zero);
-            if (!result) throw new Exception("Init Error");
             _process = new WASAPIPROC(Process);
-            BassWasapi.BASS_WASAPI_Init(devindex, 0, 0, BASSWASAPIInit.BASS_WASAPI_BUFFER, 1f, 0.05f, _process, IntPtr.Zero);
-
-
-            port.Open();
         }
+
+        
 
         private int Process(IntPtr buffer, int length, IntPtr user)
         {
@@ -56,6 +40,33 @@ namespace CLC
         public void Start()
         {
             SwitchMode(Mode.ON);
+        }
+
+        public string[] getDeviceList()
+        {
+            List<string> res = new List<string>();
+            for (int i = 0; i < BassWasapi.BASS_WASAPI_GetDeviceCount(); i++)
+            {
+                var device = BassWasapi.BASS_WASAPI_GetDeviceInfo(i);
+                if (device.IsEnabled && device.IsLoopback)
+                {
+                    res.Add(String.Format("{0} - {1}", i, device.name));
+                }
+            }
+            return res.ToArray();
+        }
+
+        public void deviceInit(int device)
+        {
+            bool result = Bass.BASS_Init(0, 44100, BASSInit.BASS_DEVICE_DEFAULT, IntPtr.Zero);
+            if (!result) throw new Exception("Init Error");
+            BassWasapi.BASS_WASAPI_Init(device, 0, 0, BASSWASAPIInit.BASS_WASAPI_BUFFER, 1f, 0.05f, _process, IntPtr.Zero);
+            init = true;
+        }
+        public void deviceFree()
+        {
+            BassWasapi.BASS_WASAPI_Free();
+            Bass.BASS_Free();
         }
 
         public void SwitchMode(Mode m)
@@ -172,8 +183,7 @@ namespace CLC
         {
             Send((byte)255);
             port.Close();
-            BassWasapi.BASS_WASAPI_Free();
-            Bass.BASS_Free();
+            deviceFree();
         }
     }
 }
