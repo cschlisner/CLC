@@ -101,6 +101,7 @@ namespace CLC
             if (settingsForm.IsDisposed)
                 settingsForm = new SettingsForm(controller, workerThread);
             settingsForm.Show();
+            settingsForm.BringToFront();
         }
 
         private void toolStripExit_Click(object sender, EventArgs e)
