@@ -18,7 +18,7 @@ This is a Windows application that communicates with the included Arduino code t
 
 ![screen1](http://i.imgur.com/xTbwsOP.gif)
 
-![screen2](http://i.imgur.com/yKNVAOM.gif)
+![screen2](http://i.imgur.com/RnNQMKl.gif)
 
 ####Demo:
 
