@@ -30,7 +30,8 @@ namespace CLC
 
             //Initialize Device List dropdown
             deviceCB.Items.AddRange(controller.getDeviceList());
-            deviceCB.SelectedIndex = (int)Properties.Settings.Default["DeviceDefault"];
+            int k = (int)Properties.Settings.Default["DeviceDefault"];
+            deviceCB.SelectedIndex = (k >= deviceCB.Items.Count) ? 0 : k;
 
 
             workerThread = new Thread(controller.Start);
