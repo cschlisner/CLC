@@ -10,10 +10,10 @@ using Un4seen.Bass.Misc;
 
 namespace CLC
 {
-    class Controller
+    public class Controller
     {
         public enum Mode {ON, OFF, LEVELS, BEAT, FADE};
-        public Mode currentMode;
+        public static Mode currentMode = Mode.ON;
         public int intensity=255, sensitivity=450, speed=3;
         private static byte[] sendData = new byte[1024];
 
@@ -23,7 +23,6 @@ namespace CLC
         private static Visuals v = new Visuals();
         public Controller()
         {
-
             Un4seen.Bass.BassNet.Registration("cschlisner@gmail.com", "2X2283720152222");
             AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnProcessExit);
             Bass.BASS_SetConfig(BASSConfig.BASS_CONFIG_UPDATETHREADS, false);
@@ -39,7 +38,7 @@ namespace CLC
 
         public void Start()
         {
-            SwitchMode(Mode.ON);
+            SwitchMode(currentMode);
         }
 
         public string[] getDeviceList()
@@ -71,6 +70,9 @@ namespace CLC
 
         public void SwitchMode(Mode m)
         {
+            Properties.Settings.Default["ModeDefault"] = m.ToString();
+            Properties.Settings.Default.Save();
+
             switch (m)
             {
                 case Mode.ON:

@@ -26,3 +26,4 @@ D:\Documents\GitHub\CLC\Visual Studio\CLC\obj\Debug\CLC.Form1.resources
 D:\Documents\GitHub\CLC\Visual Studio\CLC\obj\Debug\CLC.Properties.Resources.resources
 D:\Documents\GitHub\CLC\Visual Studio\CLC\obj\Debug\CLC.UserControl1.resources
 D:\Documents\GitHub\CLC\Visual Studio\CLC\obj\Debug\CLC.csproj.GenerateResource.Cache
+D:\Documents\GitHub\CLC\Visual Studio\CLC\obj\Debug\CLC.SettingsForm.resources

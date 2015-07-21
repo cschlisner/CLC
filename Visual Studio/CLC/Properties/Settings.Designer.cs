@@ -46,5 +46,53 @@ namespace CLC.Properties {
                 this["DeviceDefault"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("255")]
+        public int IntDefault {
+            get {
+                return ((int)(this["IntDefault"]));
+            }
+            set {
+                this["IntDefault"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("450")]
+        public int SenDefault {
+            get {
+                return ((int)(this["SenDefault"]));
+            }
+            set {
+                this["SenDefault"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public int SpeDefault {
+            get {
+                return ((int)(this["SpeDefault"]));
+            }
+            set {
+                this["SpeDefault"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("FADE")]
+        public string ModeDefault {
+            get {
+                return ((string)(this["ModeDefault"]));
+            }
+            set {
+                this["ModeDefault"] = value;
+            }
+        }
     }
 }

@@ -8,5 +8,17 @@
     <Setting Name="DeviceDefault" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
+    <Setting Name="IntDefault" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">255</Value>
+    </Setting>
+    <Setting Name="SenDefault" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">450</Value>
+    </Setting>
+    <Setting Name="SpeDefault" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="ModeDefault" Type="System.String" Scope="User">
+      <Value Profile="(Default)">FADE</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
