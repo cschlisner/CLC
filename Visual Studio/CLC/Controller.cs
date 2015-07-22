@@ -14,6 +14,7 @@ namespace CLC
     {
         public enum Mode {ON, OFF, LEVELS, BEAT, FADE};
         public static Mode currentMode = Mode.ON;
+        private int soundDevice = 0;
         public int intensity=255, sensitivity=450, speed=3;
         private static byte[] sendData = new byte[1024];
 
@@ -61,6 +62,7 @@ namespace CLC
             if (!result) throw new Exception("Init Error");
             BassWasapi.BASS_WASAPI_Init(device, 0, 0, BASSWASAPIInit.BASS_WASAPI_BUFFER, 1f, 0.05f, _process, IntPtr.Zero);
             init = true;
+            soundDevice = device;
         }
         public void deviceFree()
         {
@@ -72,7 +74,6 @@ namespace CLC
         {
             Properties.Settings.Default["ModeDefault"] = m.ToString();
             Properties.Settings.Default.Save();
-
             switch (m)
             {
                 case Mode.ON:
@@ -125,6 +126,8 @@ namespace CLC
 
         private void MonitorBeat()
         {
+            deviceFree();
+            deviceInit(soundDevice);
             float[] buffer = new float[1024];
             BassWasapi.BASS_WASAPI_Start();
             while (currentMode == Mode.BEAT)
@@ -136,11 +139,14 @@ namespace CLC
                 else Send((byte)0);
             }
             BassWasapi.BASS_WASAPI_Stop(true);
+            deviceFree();
             SwitchMode(currentMode);
         }
 
         private void MonitorLevels()
         {
+            deviceFree();
+            deviceInit(soundDevice);
             float[] buffer = new float[1024];
             BassWasapi.BASS_WASAPI_Start();
             while (currentMode == Mode.LEVELS)
@@ -150,6 +156,7 @@ namespace CLC
                 port.Write(data, 0, 1);
             }
             BassWasapi.BASS_WASAPI_Stop(false);
+            deviceFree();
             SwitchMode(currentMode);
         }
         private byte[] fft(float[] data)
