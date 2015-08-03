@@ -19,7 +19,7 @@ namespace CLC
         private static byte[] sendData = new byte[1024];
 
         private bool init = false;
-        public static SerialPort port = new SerialPort("COM1", 9600);
+        public static SerialPort port = new SerialPort();
         private static WASAPIPROC _process;
         private static Visuals v = new Visuals();
         public Controller()

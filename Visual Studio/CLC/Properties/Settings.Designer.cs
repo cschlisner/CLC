@@ -25,7 +25,7 @@ namespace CLC.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("COM3")]
+        [global::System.Configuration.DefaultSettingValueAttribute("COM1")]
         public string COMPortDefault {
             get {
                 return ((string)(this["COMPortDefault"]));

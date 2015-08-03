@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="COMPortDefault" Type="System.String" Scope="User">
-      <Value Profile="(Default)">COM3</Value>
+      <Value Profile="(Default)">COM1</Value>
     </Setting>
     <Setting Name="DeviceDefault" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
