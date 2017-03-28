@@ -4,7 +4,7 @@ This is a Windows application that communicates with the included Arduino code t
 
 
 
-##Installation
+## Installation
 1. Load the Arduino/CLC/CLC.ino program onto your Arduino 
 
 2. Simply put the "CLC app" directory wherever you want and run CLC.exe
@@ -14,13 +14,13 @@ This is a Windows application that communicates with the included Arduino code t
 4. Choose the COM port your arduino is on with the second dropdown
 
 
-##Screens/demo
+## Screens/demo
 
 ![screen1](http://i.imgur.com/xTbwsOP.gif)
 
 ![screen2](http://i.imgur.com/RnNQMKl.gif)
 
-####Demo:
+#### Demo:
 
 
 [![Demo](http://img.youtube.com/vi/pMWPy95PAZQ/0.jpg)](https://www.youtube.com/watch?v=pMWPy95PAZQ)
