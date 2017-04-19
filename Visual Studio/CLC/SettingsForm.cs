@@ -18,6 +18,11 @@ namespace CLC
         public SettingsForm(Controller c, Thread t)
         {
             InitializeComponent();
+
+            this.SetDesktopLocation(Screen.FromControl(this).Bounds.Width - this.Bounds.Width, Screen.PrimaryScreen.WorkingArea.Height - this.Bounds.Height);
+            this.Show();
+            this.BringToFront();
+
             controller = c;
             workerThread = t;
 
@@ -29,11 +34,25 @@ namespace CLC
             COMPortCB.Items.AddRange(ports);            
             COMPortCB.SelectedItem = COMPortCB.Items[COMPortCB.Items.IndexOf(Controller.port.PortName)];
 
-            // Initialize Device List dropdown
-            deviceCB.Items.AddRange(controller.getDeviceList());
+            IntensityTB.Value = controller.intensity;
+            sensitivityTB.Value = controller.sensitivity;
+            speedTB.Value = Math.Abs(controller.speed);
+
+
+            // Initialize Device List dropdown (takes the most time, so done after drawing)
+            deviceCB.Items.AddRange(controller.deviceList);
             int k = (int)Properties.Settings.Default["DeviceDefault"];
             deviceCB.SelectedIndex = (k >= deviceCB.Items.Count) ? 0 : k;
+            
+        }
 
+        private void SettingsForm_Shown(object sender, EventArgs e)
+        {
+            updateModeSelect();
+        }
+
+        public void updateModeSelect()
+        {
             // Initialize buttons and levels
             switch (Controller.currentMode)
             {
@@ -53,14 +72,6 @@ namespace CLC
                     FADE.Checked = true;
                     break;
             }
-            IntensityTB.Value = controller.intensity;
-            sensitivityTB.Value = controller.sensitivity;
-            speedTB.Value = Math.Abs(controller.speed);
-            this.SetDesktopLocation(Screen.FromControl(this).Bounds.Width - this.Bounds.Width, Screen.PrimaryScreen.WorkingArea.Height - this.Bounds.Height);
-        }
-        private void SettingsForm_Shown(object sender, EventArgs e)
-        {
-            
         }
 
         private void DisableTrackbars()
@@ -172,8 +183,6 @@ namespace CLC
         {
             Properties.Settings.Default["SpeDefault"] = speedTB.Value;
             Properties.Settings.Default.Save();
-        }
-
-        
+        }        
     }
 }

@@ -65,6 +65,8 @@
             this.COMPortCB.Name = "COMPortCB";
             this.COMPortCB.Size = new System.Drawing.Size(121, 21);
             this.COMPortCB.TabIndex = 30;
+            this.COMPortCB.SelectedIndexChanged += new System.EventHandler(this.COMPortCB_SelectedIndexChanged);
+
             // 
             // label3
             // 

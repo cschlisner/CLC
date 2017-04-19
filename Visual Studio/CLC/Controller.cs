@@ -28,6 +28,7 @@ namespace CLC
             AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnProcessExit);
             Bass.BASS_SetConfig(BASSConfig.BASS_CONFIG_UPDATETHREADS, false);
             _process = new WASAPIPROC(Process);
+            initDeviceList();
         }
 
         
@@ -42,7 +43,10 @@ namespace CLC
             SwitchMode(currentMode);
         }
 
-        public string[] getDeviceList()
+        public string[] deviceList { get; private set; }
+
+        // should only run once
+        public void initDeviceList()
         {
             List<string> res = new List<string>();
             for (int i = 0; i < BassWasapi.BASS_WASAPI_GetDeviceCount(); i++)
@@ -53,7 +57,7 @@ namespace CLC
                     res.Add(String.Format("{0} - {1}", i, device.name));
                 }
             }
-            return res.ToArray();
+            deviceList = res.ToArray();
         }
 
         public void deviceInit(int device)
@@ -185,7 +189,15 @@ namespace CLC
         private void Send(byte b)
         {
             sendData[0] = b;
-            port.Write(sendData, 0, 1);
+            try
+            {
+                port.Write(sendData, 0, 1);
+
+            }
+            catch (Exception e)
+            {
+                // nah
+            }
         }
 
         private void OnProcessExit(object sender, EventArgs e)

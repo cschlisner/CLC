@@ -24,3 +24,16 @@ D:\Documents\GitHub\CLC\Visual Studio\CLC\obj\Debug\CLC.UserControl1.resources
 D:\Documents\GitHub\CLC\Visual Studio\CLC\obj\Debug\CLC.csproj.GenerateResource.Cache
 D:\Documents\GitHub\CLC\Visual Studio\CLC\obj\Debug\CLC.SettingsForm.resources
 d:\documents\visual studio 2013\Projects\CLC\CLC\obj\Debug\CLC.SettingsForm.resources
+D:\Documents\Development\Git\CLC\Visual Studio\CLC\bin\Debug\CLC.exe.config
+D:\Documents\Development\Git\CLC\Visual Studio\CLC\bin\Debug\CLC.exe
+D:\Documents\Development\Git\CLC\Visual Studio\CLC\bin\Debug\CLC.pdb
+D:\Documents\Development\Git\CLC\Visual Studio\CLC\bin\Debug\Bass.Net.dll
+D:\Documents\Development\Git\CLC\Visual Studio\CLC\bin\Debug\Bass.Net.xml
+D:\Documents\Development\Git\CLC\Visual Studio\CLC\obj\Debug\CLC.csprojResolveAssemblyReference.cache
+D:\Documents\Development\Git\CLC\Visual Studio\CLC\obj\Debug\CLC.Properties.Resources.resources
+D:\Documents\Development\Git\CLC\Visual Studio\CLC\obj\Debug\CLC.SettingsForm.resources
+D:\Documents\Development\Git\CLC\Visual Studio\CLC\obj\Debug\CLC.UserControl1.resources
+D:\Documents\Development\Git\CLC\Visual Studio\CLC\obj\Debug\CLC.csproj.GenerateResource.Cache
+D:\Documents\Development\Git\CLC\Visual Studio\CLC\obj\Debug\CLC.exe
+D:\Documents\Development\Git\CLC\Visual Studio\CLC\obj\Debug\CLC.pdb
+D:\Documents\Development\Git\CLC\Visual Studio\CLC\obj\Debug\CLC.TrayForm.resources
